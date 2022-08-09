@@ -168,7 +168,7 @@ func main() {
 		{
 			Name:     "Operation Breakout Case",
 			HashName: "Operation%20Breakout%20Weapon%20Case",
-			Stock:	  0
+			Stock:	  0,
 		},
 		{
 			Name:     "Huntsman Case",
@@ -247,7 +247,7 @@ func sendDiscordMessage(session *discordgo.Session, baseUrl string, post Post) {
 	_, err := session.ChannelMessageSendEmbed(*Channel, &discordgo.MessageEmbed{
 		Description: "hello",
 		Title:       "title",
-		Fields: []&discordgo.MessageEmbedField{
+		Fields: []&discordgo.MessageEmbedField {
 			{
 				Name: "test1",
 				Value: "test123",
