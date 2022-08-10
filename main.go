@@ -302,7 +302,7 @@ func buildMessage(fields []EmbedField) Message {
 func sendDiscordMessage(session *discordgo.Session, message Message) {
 
 	_, err := session.ChannelMessageSendEmbed(*Channel, &discordgo.MessageEmbed{
-		Title: "title",
+		Title: message.Title,
 		Fields: []*discordgo.MessageEmbedField{
 			{
 				Name:  "test1",
