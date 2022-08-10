@@ -73,19 +73,24 @@ func getSteamItems() []EmbedField {
 			Stock:    0,
 		},
 		{
+			Name:     "Operation Riptide Case",
+			HashName: "Operation%20Riptide%20Case",
+			Stock:    20,
+		},
+		{
 			Name:     "Prisma 2 Case",
 			HashName: "Prisma%202%20Case",
-			Stock:    0,
+			Stock:    3,
 		},
 		{
 			Name:     "Danger Zone Case",
 			HashName: "Danger%20Zone%20Case",
-			Stock:    0,
+			Stock:    926,
 		},
 		{
 			Name:     "Fracture Case",
 			HashName: "Fracture%20Case",
-			Stock:    0,
+			Stock:    1,
 		},
 		{
 			Name:     "Prisma Case",
@@ -100,52 +105,52 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Horizon Case",
 			HashName: "Horizon%20Case",
-			Stock:    0,
+			Stock:    5,
 		},
 		{
 			Name:     "CS20 Case",
 			HashName: "CS20%20Case",
-			Stock:    0,
+			Stock:    1,
 		},
 		{
 			Name:     "Revolver Case",
 			HashName: "Revolver%20Case",
-			Stock:    25,
+			Stock:    3,
 		},
 		{
 			Name:     "Shadow Case",
 			HashName: "Shadow%20Case",
-			Stock:    0,
+			Stock:    4,
 		},
 		{
 			Name:     "Falchion Case",
 			HashName: "Falchion%20Case",
-			Stock:    0,
+			Stock:    12,
 		},
 		{
 			Name:     "Clutch Case",
 			HashName: "Clutch%20Case",
-			Stock:    10,
+			Stock:    13,
 		},
 		{
 			Name:     "Chroma 3 Case",
 			HashName: "Chroma%203%20Case",
-			Stock:    0,
+			Stock:    8,
 		},
 		{
 			Name:     "Spectrum 2 Case",
 			HashName: "Spectrum%202%20Case",
-			Stock:    0,
+			Stock:    12,
 		},
 		{
 			Name:     "Gamma Case",
 			HashName: "Gamma%20Case",
-			Stock:    0,
+			Stock:    4,
 		},
 		{
 			Name:     "Chroma 2 Case",
 			HashName: "Chroma%202%20Case",
-			Stock:    0,
+			Stock:    5,
 		},
 		{
 			Name:     "Dreams And Nightmares Case",
@@ -155,7 +160,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Gamma 2 Case",
 			HashName: "Gamma%202%20Case",
-			Stock:    0,
+			Stock:    4,
 		},
 		{
 			Name:     "Operation Vanguard Case",
@@ -170,22 +175,22 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Chroma Case",
 			HashName: "Chroma%20Case",
-			Stock:    0,
+			Stock:    1,
 		},
 		{
 			Name:     "Shattered Web Case",
 			HashName: "Shattered%20Web%20Case",
-			Stock:    0,
+			Stock:    2,
 		},
 		{
 			Name:     "Operation Phoenix Case",
 			HashName: "Operation%20Phoenix%20Weapon%20Case",
-			Stock:    0,
+			Stock:    908,
 		},
 		{
 			Name:     "Operation Broken Fang Case",
 			HashName: "Operation%20Broken%20Fang%20Casee",
-			Stock:    0,
+			Stock:    12,
 		},
 		{
 			Name:     "Glove Case",
