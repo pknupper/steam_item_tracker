@@ -13,14 +13,14 @@ jobs:
       
   build:
     name: Execute Container
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
       
     - name: Pull Latest Image
-      run: docker pull ghcr.io/pknupper/steam-item-tracker:main
+      run: docker pull ghcr.io/pknupper/steam_item_tracker:main
 
     - name: Run Container
-      run: docker run ghcr.io/pknupper/steam-item-tracker:main -channel $CHANNEL -token $BOT_TOKEN
+      run: docker run ghcr.io/pknupper/steam_item_tracker:main -channel $CHANNEL -token $BOT_TOKEN
