@@ -109,7 +109,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Revolver Case",
 			HashName: "Revolver%20Case",
-			Stock:    0,
+			Stock:    25,
 		},
 		{
 			Name:     "Shadow Case",
@@ -124,7 +124,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Clutch Case",
 			HashName: "Clutch%20Case",
-			Stock:    0,
+			Stock:    10,
 		},
 		{
 			Name:     "Chroma 3 Case",
@@ -268,7 +268,7 @@ func getSteamItems() []EmbedField {
 
 		var newField EmbedField
 		newField.Name = item.Name
-		lowestPriceInt, err := strconv.Atoi(response.LowestPrice)
+		lowestPriceInt, err := strconv.Atoi(strings.TrimSuffix(response.LowestPrice, "€"))
 		newField.Value = strconv.Itoa(lowestPriceInt * item.Stock)
 
 		fields = append(fields, newField)
