@@ -24,7 +24,15 @@ type Response struct {
 	MedianPrice string `json:"median_price"`
 }
 
-type Post struct {
+type EmbedField struct {
+	Name		string
+	Value 		string
+}
+
+type Message struct {
+	Description string
+	Title 		string
+	Fields		[]EmbedField
 }
 
 var (
@@ -223,6 +231,9 @@ func main() {
 	}
 
 	for _, item := range items {
+
+		var fields []EmbedField
+
 		resp, err := c.Get(baseUrl + item.HashName)
 
 		if err != nil {
@@ -237,6 +248,12 @@ func main() {
 		var response Response
 		json.Unmarshal([]byte(body), &response)
 
+		var newField EmbedField
+		newField[Name] = item.Name
+		newField[Value] = strconv.Itoa((strconv.Atoi(response.LowestPrice) * item.Stock))
+
+		fields = append(fields, newField)
+
 		time.Sleep(5 * time.Second)
 	}
 
@@ -247,7 +264,7 @@ func sendDiscordMessage(session *discordgo.Session, baseUrl string, post Post) {
 	_, err := session.ChannelMessageSendEmbed(*Channel, &discordgo.MessageEmbed{
 		Description: "hello",
 		Title:       "title",
-		Fields: []&discordgo.MessageEmbedField {
+		Fields: []&discordgo.MessageEmbedField{
 			{
 				Name: "test1",
 				Value: "test123",
