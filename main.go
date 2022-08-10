@@ -271,10 +271,11 @@ func getSteamItems() []EmbedField {
 		
 		newField.Name = item.Name
 		
-		lowestPriceInt, err := strconv.Atoi(strings.TrimSuffix(response.LowestPrice, "€"))
-		log.Printf("Price for %s is %d", newField.Name, lowestPriceInt)
+		lowestPriceFloat, err := strconv.ParseFloat(normalizeGermanFloatString(strings.TrimSuffix(response.LowestPrice, "€")), 32)
 		
-		newField.Value = strconv.Itoa(lowestPriceInt * item.Stock)
+		log.Printf("Price for %s is %f", newField.Name, lowestPriceFloat)
+		
+		newField.Value = fmt.Sprintf("%f", lowestPriceFloat * item.Stock)
 		
 		log.Printf("Field: %s, Value: %s", newField.Name, newField.Value)
 		fields = append(fields, newField)
@@ -324,4 +325,9 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 	if err != nil {
 		log.Printf("Error sending message: %v", err)
 	}
+}
+
+func normalizeGermanFloatString(old string) string {
+    s := strings.Replace(old, ",", ".", -1)
+    return strings.Replace(s, ".", "", 1)
 }
