@@ -331,6 +331,6 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 
 func normalizeGermanFloatString(old string) string {
     s := strings.Replace(old, ",", ".", -1)
-    s := strings.Replace(s, "--", "00", -1)
+    s = strings.Replace(s, "--", "00", -1)
     return strings.Replace(s, ".", "", 1)
 }
