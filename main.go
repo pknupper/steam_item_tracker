@@ -268,8 +268,12 @@ func getSteamItems() []EmbedField {
 		json.Unmarshal([]byte(body), &response)
 
 		var newField EmbedField
+		
 		newField.Name = item.Name
+		
 		lowestPriceInt, err := strconv.Atoi(strings.TrimSuffix(response.LowestPrice, "€"))
+		log.Printf("Price for %s is %d", newField.Name, lowestPriceInt)
+		
 		newField.Value = strconv.Itoa(lowestPriceInt * item.Stock)
 		
 		log.Printf("Field: %s, Value: %s", newField.Name, newField.Value)
