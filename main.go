@@ -291,17 +291,17 @@ func buildMessage(fields []EmbedField) Message {
 	var message Message
 	message.Fields = fields
 
-	totalValue := 0
+	totalValue := 0.000000
 
 	for _, field := range fields {
-		value, err := strconv.Atoi(field.Value)
+		value, err := strconv.ParseFloat(field.Value, 64)
 		if err != nil {
 			fmt.Printf("Error %s", err)
 		}
 		
 		totalValue = totalValue + value
 		
-		log.Printf("Current value: %d", totalValue)
+		log.Printf("Current value: %f", totalValue)
 	}
 
 	message.Title = fmt.Sprintf("Your inventory has a value of %d€", totalValue)
@@ -331,5 +331,6 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 
 func normalizeGermanFloatString(old string) string {
     s := strings.Replace(old, ",", ".", -1)
+    s := strings.Replace(s, "--", "00", -1)
     return strings.Replace(s, ".", "", 1)
 }
