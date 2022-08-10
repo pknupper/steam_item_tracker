@@ -272,7 +272,7 @@ func getSteamItems() []EmbedField {
 		lowestPriceInt, err := strconv.Atoi(strings.TrimSuffix(response.LowestPrice, "€"))
 		newField.Value = strconv.Itoa(lowestPriceInt * item.Stock)
 		
-		log.Printf(newField)
+		log.Printf("Field: %s, Value: %s", newField.Name, newField.Value)
 		fields = append(fields, newField)
 
 		time.Sleep(5 * time.Second)
@@ -292,9 +292,9 @@ func buildMessage(fields []EmbedField) Message {
 			fmt.Printf("Error %s", err)
 		}
 		
-		log.Printf(value)
-		
 		totalValue = totalValue + value
+		
+		log.Printf("Current value: %d", totalValue)
 	}
 
 	message.Title = fmt.Sprintf("Your inventory has a value of %d€", totalValue)
