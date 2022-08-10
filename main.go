@@ -304,7 +304,7 @@ func buildMessage(fields []EmbedField) Message {
 		log.Printf("Current value: %f", totalValue)
 	}
 
-	message.Title = fmt.Sprintf("Your inventory has a value of %d€", totalValue)
+	message.Title = fmt.Sprintf("Your inventory has a value of %f€", totalValue)
 
 	return message
 }
