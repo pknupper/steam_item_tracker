@@ -276,7 +276,9 @@ func getSteamItems() []EmbedField {
 
 		time.Sleep(5 * time.Second)
 	}
-
+	
+	log.Printf(fields)
+	
 	return fields
 }
 
@@ -291,6 +293,9 @@ func buildMessage(fields []EmbedField) Message {
 		if err != nil {
 			fmt.Printf("Error %s", err)
 		}
+		
+		log.Printf(value)
+		
 		totalValue = totalValue + value
 	}
 
