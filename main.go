@@ -271,14 +271,12 @@ func getSteamItems() []EmbedField {
 		newField.Name = item.Name
 		lowestPriceInt, err := strconv.Atoi(strings.TrimSuffix(response.LowestPrice, "€"))
 		newField.Value = strconv.Itoa(lowestPriceInt * item.Stock)
-
+		
+		log.Printf(newField)
 		fields = append(fields, newField)
 
 		time.Sleep(5 * time.Second)
-	}
-	
-	log.Printf(fields)
-	
+	}	
 	return fields
 }
 
