@@ -275,7 +275,9 @@ func getSteamItems() []EmbedField {
 		
 		log.Printf("Price for %s is %f", newField.Name, lowestPriceFloat)
 		
-		newField.Value = fmt.Sprintf("%f", lowestPriceFloat * item.Stock)
+		itemValue := lowestPriceFloat * float32(item.Stock)
+		
+		newField.Value = fmt.Sprintf("%f", itemValue)
 		
 		log.Printf("Field: %s, Value: %s", newField.Name, newField.Value)
 		fields = append(fields, newField)
