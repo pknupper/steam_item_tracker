@@ -150,7 +150,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Chroma 2 Case",
 			HashName: "Chroma%202%20Case",
-			Stock:    5,
+			Stock:    161,
 		},
 		{
 			Name:     "Dreams And Nightmares Case",
@@ -165,7 +165,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Operation Vanguard Case",
 			HashName: "Operation%20Vanguard%20Weapon%20Case",
-			Stock:    0,
+			Stock:    258,
 		},
 		{
 			Name:     "Spectrum Case",
@@ -200,7 +200,7 @@ func getSteamItems() []EmbedField {
 		{
 			Name:     "Operation Breakout Case",
 			HashName: "Operation%20Breakout%20Weapon%20Case",
-			Stock:    0,
+			Stock:    530,
 		},
 		{
 			Name:     "Huntsman Case",
