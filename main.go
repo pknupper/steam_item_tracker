@@ -49,6 +49,9 @@ func main() {
 	fields := getSteamItems()
 
 	message := buildMessage(fields)
+	
+	latestMessage := getLatestChannelMessageTitle(session)
+	log.Printf("Latest message: %s", latestMessage)
 
 	session, err := discordgo.New("Bot " + *BotToken)
 
