@@ -334,6 +334,20 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 	}
 }
 
+func getLatestChannelMessageTitle(session *discordgo.Session) string {
+	latestMessageTitle, err := session.ChannelMessages(*Channel, 1, "", "", "")
+	if err != nil {
+		log.Printf("Could not get latest message: %v", err)
+	}
+
+	if len(latestChannelMessage) > 0 {
+		latestMessageTitle := latestChannelMessage[0].Embeds[0].Title
+		return latestMessageTitle
+	}
+	return ""
+
+}
+
 func normalizeGermanFloatString(old string) string {
     s := strings.Replace(old, ",", ".", -1)
     s = strings.Replace(s, "--", "00", -1)
