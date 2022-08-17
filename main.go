@@ -338,13 +338,13 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 }
 
 func getLatestChannelMessageTitle(session *discordgo.Session) string {
-	latestMessageTitle, err := session.ChannelMessages(*Channel, 1, "", "", "")
+	latestMessage, err := session.ChannelMessages(*Channel, 1, "", "", "")
 	if err != nil {
 		log.Printf("Could not get latest message: %v", err)
 	}
 
-	if len(latestChannelMessage) > 0 {
-		latestMessageTitle := latestChannelMessage[0].Embeds[0].Title
+	if len(latestMessage) > 0 {
+		latestMessageTitle := latestMessage[0].Embeds[0].Title
 		return latestMessageTitle
 	}
 	return ""
