@@ -58,7 +58,6 @@ func main() {
 	}
 	
 	latestMessage := getLatestChannelMessageTitle(session)
-	log.Printf("Latest message: %s", latestMessage)
 
 	sendDiscordMessage(session, message)
 
@@ -281,13 +280,10 @@ func getSteamItems() []EmbedField {
 		
 		lowestPriceFloat, err := strconv.ParseFloat(normalizeGermanFloatString(strings.TrimSuffix(response.LowestPrice, "€")), 32)
 		
-		log.Printf("Price for %s is %f", newField.Name, lowestPriceFloat)
-		
 		itemValue := lowestPriceFloat * float64(item.Stock) / 100
 		
 		newField.Value = fmt.Sprintf("%f", itemValue)
 		
-		log.Printf("Field: %s, Value: %s", newField.Name, newField.Value)
 		fields = append(fields, newField)
 
 		time.Sleep(5 * time.Second)
@@ -308,8 +304,6 @@ func buildMessage(fields []EmbedField) Message {
 		}
 		
 		totalValue = totalValue + value
-		
-		log.Printf("Current value: %f", totalValue)
 	}
 
 	message.Title = fmt.Sprintf("Your inventory has a value of %f€", totalValue)
