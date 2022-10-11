@@ -56,8 +56,6 @@ func main() {
 		fmt.Printf("Error %s", err)
 		return
 	}
-	
-	latestMessage := getLatestChannelMessageTitle(session)
 
 	sendDiscordMessage(session, message)
 
