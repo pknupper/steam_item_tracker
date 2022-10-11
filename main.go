@@ -321,16 +321,6 @@ func sendDiscordMessage(session *discordgo.Session, message Message) {
 
 	_, err := session.ChannelMessageSendEmbed(*Channel, &discordgo.MessageEmbed{
 		Title: message.Title,
-		Fields: []*discordgo.MessageEmbedField{
-			{
-				Name:  "test1",
-				Value: "test123",
-			},
-			{
-				Name:  "test2",
-				Value: "test1234",
-			},
-		},
 	})
 	if err != nil {
 		log.Printf("Error sending message: %v", err)
